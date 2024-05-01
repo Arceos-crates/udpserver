@@ -1,0 +1,100 @@
+make[1]: Entering directory '/home/xsp/Arceos-crates/udpserver'
+ls: cannot access '/home/xsp/Arceos-crates/udpserver/crates': No such file or directory
+ls: cannot access '/home/xsp/Arceos-crates/udpserver/modules': No such file or directory
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 2G -smp 1 -machine virt -bios default -kernel /home/xsp/Arceos-crates/udpserver/apps/net/udpserver/udpserver_riscv64-qemu-virt.bin -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bf000000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 0
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = info
+
+[37m[  0.170993 0 axruntime:130] [32mLogging is enabled.[m
+[m[37m[  0.178019 0 axruntime:131] [32mPrimary CPU 0 started, dtb = 0xbf000000.[m
+[m[37m[  0.180802 0 axruntime:132] [32mPlatform name riscv64_qemu_virt.[m
+[m[37m[  0.182965 0 axruntime:134] [32mFound physcial memory regions:[m
+[m[37m[  0.186151 0 axruntime:136] [32m  [PA:0x80200000, PA:0x8021a000) .text (READ | EXECUTE | RESERVED)[m
+[m[37m[  0.189664 0 axruntime:136] [32m  [PA:0x8021a000, PA:0x80222000) .rodata (READ | RESERVED)[m
+[m[37m[  0.192027 0 axruntime:136] [32m  [PA:0x80222000, PA:0x80225000) .data .tdata .tbss .percpu (READ | WRITE | RESERVED)[m
+[m[37m[  0.194906 0 axruntime:136] [32m  [PA:0x80225000, PA:0x80265000) boot stack (READ | WRITE | RESERVED)[m
+[m[37m[  0.197446 0 axruntime:136] [32m  [PA:0x80265000, PA:0x8028b000) .bss (READ | WRITE | RESERVED)[m
+[m[37m[  0.200098 0 axruntime:136] [32m  [PA:0x8028b000, PA:0x88000000) free memory (READ | WRITE | FREE)[m
+[m[37m[  0.202904 0 axruntime:136] [32m  [PA:0xc000000, PA:0xc210000) mmio (READ | WRITE | DEVICE | RESERVED)[m
+[m[37m[  0.205585 0 axruntime:136] [32m  [PA:0x10000000, PA:0x10001000) mmio (READ | WRITE | DEVICE | RESERVED)[m
+[m[37m[  0.208158 0 axruntime:136] [32m  [PA:0x10001000, PA:0x10009000) mmio (READ | WRITE | DEVICE | RESERVED)[m
+[m[37m[  0.210785 0 axruntime:136] [32m  [PA:0x30000000, PA:0x40000000) mmio (READ | WRITE | DEVICE | RESERVED)[m
+[m[37m[  0.213507 0 axruntime:136] [32m  [PA:0x40000000, PA:0x80000000) mmio (READ | WRITE | DEVICE | RESERVED)[m
+[m[37m[  0.225332 0 axruntime:218] [32mInitialize global memory allocator...[m
+[m[37m[  0.233546 0 axruntime:219] [32m  use TLSF allocator.[m
+[m[37m[  0.243432 0 axruntime:231] [32malloc region size: 7D75000[m
+[m[37m[  0.259681 0 axruntime:150] [32mInitialize kernel page table...[m
+[m[37m[  0.270914 0 axruntime:154] [32mInitialize platform devices...[m
+[m[37m[  0.273082 0 axdriver:152] [32mInitialize device drivers...[m
+[m[37m[  0.275799 0 axdriver:153] [32m  device model: static[m
+[m[37m[  0.278480 0 virtio_drivers::device::net::dev_raw:30] [32mnegotiated_features Features(MAC | STATUS | RING_EVENT_IDX)[m
+[m[37m[  0.292979 0 axdriver::bus::mmio:11] [32mregistered a new Net device at [PA:0x10008000, PA:0x10009000): "virtio-net"[m
+[m[37m[  0.299057 0 axnet:46] [32mInitialize network subsystem...[m
+[m[37m[  0.303106 0 axnet:49] [32m  use NIC 0: "virtio-net"[m
+[m[37m[  0.310700 0 axnet::smoltcp_impl:368] [32mcreated net interface "eth0":[m
+[m[37m[  0.315468 0 axnet::smoltcp_impl:369] [32m  ether:    52-54-00-12-34-56[m
+[m[37m[  0.321761 0 axnet::smoltcp_impl:370] [32m  ip:       10.0.2.15/24[m
+[m[37m[  0.326547 0 axnet::smoltcp_impl:371] [32m  gateway:  10.0.2.2[m
+[m[37m[  0.337650 0 axruntime:196] [32mPrimary CPU 0 init OK.[m
+[mHello, simple udp client!
+listen on: 0.0.0.0:5555

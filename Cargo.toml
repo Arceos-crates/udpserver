@@ -1,8 +1,9 @@
-[package]
-name = "arceos-udpserver"
-version = "0.1.0"
-edition = "2021"
-authors = ["Dashuai Wu <wudashuaijss@foxmail.com>"]
+[workspace]
+resolver = "2"
 
-[dependencies]
-axstd = { git = "https://github.com/Arceos-crates/axstd.git", features = ["net"], optional = true }
+members = [
+    "apps/net/udpserver",
+]
+
+[profile.release]
+lto = true
